@@ -4,13 +4,13 @@
   
   <h2>Loan Calculator</h2>
   
- <p> Present Value - The amount you wish to borrow <input type="number" id="pv" </p>
- <p> Years <input type="number" id="n" </p>
- <p>  % - Annual interest rate <input type="number" id="r" </p>
+ <p> Present Value - The amount you wish to borrow <input type="number" id="pv" ></p>
+ <p> Years <input type="number" id="n" ></p>
+ <p>  % - Annual interest rate <input type="number" id="r" ></p>
    
   <button onclick="calculate()">Calculate</button>
    
-  <p>Monthly Payment: $<span id="result">0.00</span></p>
+  <p id="ans">Monthly Payment: $0.00</p>
   
   <script>
     function calculate() {
