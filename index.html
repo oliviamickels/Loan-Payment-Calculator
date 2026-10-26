@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Loan Payment Calculator.</title>
-  <h1>Loan Payment Calculator.</h1>
-</head>
 <body>
 
+  <h2>Loan Calculator</h2>
+  
+  Loan Amount: <input type="number" id="pv" value="250000"><br><br>
+  Interest Rate (%): <input type="number" id="r" value="6.5"><br><br>
+  Years: <input type="number" id="n" value="30"><br><br>
+  
+  <button onclick="calculate()">Calculate</button>
+  
+  <p>Monthly Payment: $<span id="result">0.00</span></p>
 
-<p>P = ((r/100/12) * PV) / (1-(1+(r/100/12))**-(n*12));</p>
+  <script>
+    function calculate() {
+      const PV = parseFloat(document.getElementById('pv').value);
+      const r = parseFloat(document.getElementById('r').value);
+      const n = parseFloat(document.getElementById('n').value);
+
+      // The exact corrected formula from your prompt
+      const P = ((r/100/12) * PV) / (1 - (1 + (r/100/12)) ** -(n*12));
+
+      document.getElementById('result').innerText = P.toFixed(2);
+    }
+  </script>
 
 </body>
 </html>
